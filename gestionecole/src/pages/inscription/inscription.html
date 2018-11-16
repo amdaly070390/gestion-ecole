@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> La liste des eleves incrits a une classe </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <button
+      class="add"
+      ion-button
+      item-right
+      icon-right
+      margin-bottom
+      color="primary"
+      (click)="addEntry()"
+    >
+      Add a inscription
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item *ngFor="let item of items">
+    <h2>{{ item.nomCla }}</h2>
+    <h2>{{ item.nomEl }}</h2>
+    <button
+      ion-button
+      color="primary"
+      item-right
+      (click)="viewEntry({ record: item })"
+    >
+      View
+    </button>
+  </ion-item>
+</ion-content>
